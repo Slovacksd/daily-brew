@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root 
+{
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+:root[data-theme="inline"] 
+{
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+}
+
+
+@media (prefers-color-scheme: dark) 
+{
+  :root 
+  {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+
+}
+
+
+body 
+{
+  background: var(--background);
+  
+  color: var(--foreground);
+  font-family: Inter, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+/* Custom Conic Gradient Utilities */
+.bg-conic 
+{
+  background: conic-gradient(from 0deg, var(--conic-from, #3b82f6) 0deg, var(--conic-to, #06b6d4) 360deg);
+  transition: background 0.3s ease;
+
+}
+
+.bg-conic-180 
+{
+  background: conic-gradient(from 180deg, var(--conic-from, #4f46e5) 0deg, var(--conic-via, #e0e7ff) 180deg, var(--conic-to, #4f46e5) 360deg);
+  transition: background 0.3s ease;
+
+}
+
+.bg-conic-decreasing 
+{
+  background: conic-gradient(from 0deg, var(--conic-from, #6d28d9), var(--conic-via, #bfef45) 50%, var(--conic-to, #6d28d9));
+  transition: background 0.3s ease;
+
+}
